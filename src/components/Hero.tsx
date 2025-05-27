@@ -1,10 +1,18 @@
 
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
+import { ArrowDown, Code, Cloud, Brain } from 'lucide-react';
 
 const Hero = () => {
   const [currentSkill, setCurrentSkill] = useState(0);
-  const skills = ['React', 'AWS', 'AI/ML', 'Next.js', 'Python', 'Java'];
+  const skills = [
+    { name: 'React', icon: Code },
+    { name: 'AWS', icon: Cloud },
+    { name: 'AI/ML', icon: Brain },
+    { name: 'Next.js', icon: Code },
+    { name: 'Python', icon: Code },
+    { name: 'Java', icon: Code }
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,48 +28,66 @@ const Hero = () => {
     }
   };
 
+  const CurrentIcon = skills[currentSkill].icon;
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-purple-600 via-purple-700 to-navy">
-      {/* Animated background shapes */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-electric/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-yellow-400/30 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100">
+      {/* Modern geometric background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-electric/10 to-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 -left-20 w-60 h-60 bg-gradient-to-tr from-purple-400/10 to-pink-400/10 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-gradient-to-bl from-yellow-400/10 to-orange-400/10 rounded-full blur-xl"></div>
+        
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
-          <div className="text-white animate-fade-in">
-            <h1 className="text-5xl lg:text-6xl font-bold font-poppins mb-6">
-              Hello, I'm <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
+          <div className="text-center lg:text-left animate-fade-in">
+            <div className="mb-6">
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-electric/10 text-electric font-medium text-sm border border-electric/20">
+                <span className="w-2 h-2 bg-electric rounded-full mr-2 animate-pulse"></span>
+                Available for opportunities
+              </span>
+            </div>
+            
+            <h1 className="text-5xl lg:text-7xl font-bold font-poppins mb-6 leading-tight">
+              <span className="text-gray-900">Hello, I'm</span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-electric to-purple-600">
                 Naveen Kumar
               </span>
             </h1>
-            <p className="text-xl lg:text-2xl font-medium mb-4 text-purple-100">
+            
+            <p className="text-xl lg:text-2xl font-medium mb-4 text-gray-700">
               Building Tomorrow's Solutions with Code & Cloud
             </p>
-            <p className="text-lg mb-8 text-purple-200 max-w-lg">
+            
+            <p className="text-lg mb-8 text-gray-600 max-w-2xl">
               Computer Science undergraduate and aspiring Full-Stack Developer & Cloud Solutions Engineer 
               specializing in React, AI/ML, and AWS cloud technologies.
             </p>
 
             {/* Animated Skills */}
-            <div className="mb-8">
-              <p className="text-sm text-purple-200 mb-2">Currently mastering:</p>
-              <div className="text-2xl font-semibold">
-                <span className="text-yellow-400 transition-all duration-500">
-                  {skills[currentSkill]}
-                </span>
+            <div className="mb-10">
+              <p className="text-sm text-gray-500 mb-3">Currently mastering:</p>
+              <div className="flex items-center justify-center lg:justify-start">
+                <div className="flex items-center space-x-3 bg-white rounded-xl px-6 py-4 shadow-lg border border-gray-100">
+                  <CurrentIcon className="w-6 h-6 text-electric transition-all duration-500" />
+                  <span className="text-xl font-semibold text-gray-900 transition-all duration-500">
+                    {skills[currentSkill].name}
+                  </span>
+                </div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
                 onClick={() => scrollToSection('portfolio')}
                 size="lg"
-                className="bg-gradient-to-r from-yellow-400 to-orange-500 text-navy hover:from-yellow-500 hover:to-orange-600 font-semibold transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-primary to-electric hover:from-primary/90 hover:to-electric/90 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 View My Work
               </Button>
@@ -69,38 +95,63 @@ const Hero = () => {
                 onClick={() => scrollToSection('contact')}
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-navy transition-all duration-300"
+                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
               >
                 Get In Touch
               </Button>
             </div>
           </div>
 
-          {/* Profile Image */}
+          {/* Profile Section */}
           <div className="relative animate-slide-in-left">
-            <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 mx-auto rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 p-1">
-                <div className="w-full h-full rounded-full bg-gray-300 flex items-center justify-center text-6xl text-gray-600">
-                  👨‍💻
+            <div className="relative max-w-md mx-auto">
+              {/* Main profile container */}
+              <div className="relative">
+                <div className="w-80 h-80 lg:w-96 lg:h-96 mx-auto rounded-3xl bg-gradient-to-br from-primary to-electric p-1 shadow-2xl">
+                  <div className="w-full h-full rounded-3xl bg-gradient-to-br from-gray-100 to-white flex items-center justify-center">
+                    <div className="text-8xl">👨‍💻</div>
+                  </div>
                 </div>
-              </div>
-              {/* Floating badges */}
-              <div className="absolute -top-4 -right-4 bg-white rounded-full px-4 py-2 shadow-lg animate-float">
-                <span className="text-navy font-semibold text-sm">AWS Certified</span>
-              </div>
-              <div className="absolute bottom-8 -left-8 bg-yellow-400 rounded-full px-4 py-2 shadow-lg animate-float" style={{ animationDelay: '1s' }}>
-                <span className="text-navy font-semibold text-sm">React Expert</span>
+                
+                {/* Floating achievement badges */}
+                <div className="absolute -top-6 -right-6 bg-white rounded-2xl px-4 py-3 shadow-xl border border-gray-100 animate-float">
+                  <div className="flex items-center space-x-2">
+                    <Cloud className="w-5 h-5 text-electric" />
+                    <span className="text-sm font-semibold text-gray-700">AWS Certified</span>
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-6 -left-6 bg-white rounded-2xl px-4 py-3 shadow-xl border border-gray-100 animate-float" style={{ animationDelay: '1s' }}>
+                  <div className="flex items-center space-x-2">
+                    <Code className="w-5 h-5 text-primary" />
+                    <span className="text-sm font-semibold text-gray-700">React Expert</span>
+                  </div>
+                </div>
+                
+                <div className="absolute top-1/2 -right-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl px-4 py-3 shadow-xl animate-float" style={{ animationDelay: '2s' }}>
+                  <div className="flex items-center space-x-2">
+                    <Brain className="w-5 h-5 text-white" />
+                    <span className="text-sm font-bold text-white">AI/ML</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
-        </div>
+      {/* Modern scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <button 
+          onClick={() => scrollToSection('about')}
+          className="flex flex-col items-center space-y-2 text-gray-400 hover:text-gray-600 transition-colors group"
+        >
+          <span className="text-sm font-medium">Scroll to explore</span>
+          <div className="flex flex-col items-center space-y-1 group-hover:animate-bounce">
+            <ArrowDown className="w-4 h-4" />
+            <ArrowDown className="w-4 h-4 opacity-50" />
+          </div>
+        </button>
       </div>
     </section>
   );
