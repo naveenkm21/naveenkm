@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
 import { ArrowDown, Code, Cloud, Brain } from 'lucide-react';
@@ -108,8 +107,12 @@ const Hero = () => {
               {/* Main profile container */}
               <div className="relative">
                 <div className="w-80 h-80 lg:w-96 lg:h-96 mx-auto rounded-3xl bg-gradient-to-br from-primary to-electric p-1 shadow-2xl">
-                  <div className="w-full h-full rounded-3xl bg-gradient-to-br from-gray-100 to-white flex items-center justify-center">
-                    <div className="text-8xl">👨‍💻</div>
+                  <div className="w-full h-full rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-white">
+                    <img 
+                      src="https://i.postimg.cc/nrD9fxqm/1738781602410.jpg" 
+                      alt="Naveen Kumar - Full-Stack Developer"
+                      className="w-full h-full object-cover object-center"
+                    />
                   </div>
                 </div>
                 
