@@ -40,10 +40,7 @@ const Services = () => {
   ];
 
   const downloadResume = () => {
-    // In a real application, this would download the actual resume PDF
-    console.log('Downloading resume...');
-    // You would typically have a link to a PDF file here
-    // window.open('/path-to-resume.pdf', '_blank');
+    window.open('https://drive.google.com/file/d/1jCj2PHswaNvWSaon-q9AaQiKsDweQS72/view?usp=sharing', '_blank');
   };
 
   return (

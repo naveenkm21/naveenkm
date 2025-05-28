@@ -173,17 +173,15 @@ const Portfolio = () => {
                   </div>
 
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/80 dark:group-hover:bg-gray-900/80 transition-all duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex space-x-3">
-                      <Button 
-                        size="sm"
-                        className="bg-white text-navy hover:bg-gray-100 shadow-lg"
-                        onClick={() => window.open(project.link, '_blank')}
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        GitHub
-                      </Button>
-                    </div>
+                  <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/80 dark:group-hover:bg-gray-900/80 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <Button 
+                      size="sm"
+                      className="bg-white text-navy hover:bg-gray-100 shadow-lg transition-all duration-200"
+                      onClick={() => window.open(project.link, '_blank')}
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      GitHub
+                    </Button>
                   </div>
                 </div>
 
