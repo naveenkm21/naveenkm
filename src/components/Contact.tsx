@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -67,9 +66,9 @@ const Contact = () => {
     },
     {
       icon: ExternalLink,
-      label: "Google Developer",
-      value: "g.dev/naveenkm_srmuniversity",
-      link: "https://g.dev/naveenkm_srmuniversity",
+      label: "LeetCode",
+      value: "leetcode.com/u/naveenkmoh",
+      link: "https://leetcode.com/u/naveenkmoh/",
       color: "from-yellow-500 to-orange-600"
     }
   ];
@@ -88,10 +87,10 @@ const Contact = () => {
       color: "hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110"
     },
     {
-      name: "Google Developer",
-      icon: "🌐",
-      url: "https://g.dev/naveenkm_srmuniversity",
-      color: "hover:bg-green-50 dark:hover:bg-green-900/30 hover:text-green-600 dark:hover:text-green-400 hover:scale-110"
+      name: "LeetCode",
+      icon: "🧠",
+      url: "https://leetcode.com/u/naveenkmoh/",
+      color: "hover:bg-yellow-50 dark:hover:bg-yellow-900/30 hover:text-yellow-600 dark:hover:text-yellow-400 hover:scale-110"
     }
   ];
 
