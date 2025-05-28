@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
 import { ArrowDown, Code, Cloud, Brain } from 'lucide-react';
@@ -30,15 +31,15 @@ const Hero = () => {
   const CurrentIcon = skills[currentSkill].icon;
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
       {/* Modern geometric background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-electric/10 to-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 -left-20 w-60 h-60 bg-gradient-to-tr from-purple-400/10 to-pink-400/10 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-gradient-to-bl from-yellow-400/10 to-orange-400/10 rounded-full blur-xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-electric/10 to-primary/10 dark:from-electric/20 dark:to-primary/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 -left-20 w-60 h-60 bg-gradient-to-tr from-purple-400/10 to-pink-400/10 dark:from-purple-400/20 dark:to-pink-400/20 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-gradient-to-bl from-yellow-400/10 to-orange-400/10 dark:from-yellow-400/20 dark:to-orange-400/20 rounded-full blur-xl"></div>
         
         {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -46,36 +47,36 @@ const Hero = () => {
           {/* Content */}
           <div className="text-center lg:text-left animate-fade-in">
             <div className="mb-6">
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-electric/10 text-electric font-medium text-sm border border-electric/20">
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-electric/10 dark:bg-electric/20 text-electric font-medium text-sm border border-electric/20">
                 <span className="w-2 h-2 bg-electric rounded-full mr-2 animate-pulse"></span>
                 Available for opportunities
               </span>
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold font-poppins mb-6 leading-tight">
-              <span className="text-gray-900">Hello, I'm</span>
+              <span className="text-gray-900 dark:text-white">Hello, I'm</span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-electric to-purple-600">
                 Naveen Kumar
               </span>
             </h1>
             
-            <p className="text-xl lg:text-2xl font-medium mb-4 text-gray-700">
+            <p className="text-xl lg:text-2xl font-medium mb-4 text-gray-700 dark:text-gray-300">
               Building Tomorrow's Solutions with Code & Cloud
             </p>
             
-            <p className="text-lg mb-8 text-gray-600 max-w-2xl">
+            <p className="text-lg mb-8 text-gray-600 dark:text-gray-400 max-w-2xl">
               Computer Science undergraduate and aspiring Full-Stack Developer & Cloud Solutions Engineer 
               specializing in React, AI/ML, and AWS cloud technologies.
             </p>
 
             {/* Animated Skills */}
             <div className="mb-10">
-              <p className="text-sm text-gray-500 mb-3">Currently mastering:</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">Currently mastering:</p>
               <div className="flex items-center justify-center lg:justify-start">
-                <div className="flex items-center space-x-3 bg-white rounded-xl px-6 py-4 shadow-lg border border-gray-100">
+                <div className="flex items-center space-x-3 bg-white dark:bg-gray-800 rounded-xl px-6 py-4 shadow-lg border border-gray-100 dark:border-gray-700">
                   <CurrentIcon className="w-6 h-6 text-electric transition-all duration-500" />
-                  <span className="text-xl font-semibold text-gray-900 transition-all duration-500">
+                  <span className="text-xl font-semibold text-gray-900 dark:text-white transition-all duration-500">
                     {skills[currentSkill].name}
                   </span>
                 </div>
@@ -94,7 +95,7 @@ const Hero = () => {
                 onClick={() => scrollToSection('contact')}
                 variant="outline"
                 size="lg"
-                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
+                className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
               >
                 Get In Touch
               </Button>
@@ -107,7 +108,7 @@ const Hero = () => {
               {/* Main profile container */}
               <div className="relative">
                 <div className="w-80 h-80 lg:w-96 lg:h-96 mx-auto rounded-3xl bg-gradient-to-br from-primary to-electric p-1 shadow-2xl">
-                  <div className="w-full h-full rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-white">
+                  <div className="w-full h-full rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-white dark:from-gray-700 dark:to-gray-800">
                     <img 
                       src="https://i.postimg.cc/nrD9fxqm/1738781602410.jpg" 
                       alt="Naveen Kumar - Full-Stack Developer"
@@ -117,17 +118,17 @@ const Hero = () => {
                 </div>
                 
                 {/* Floating achievement badges */}
-                <div className="absolute -top-6 -right-6 bg-white rounded-2xl px-4 py-3 shadow-xl border border-gray-100 animate-float">
+                <div className="absolute -top-6 -right-6 bg-white dark:bg-gray-800 rounded-2xl px-4 py-3 shadow-xl border border-gray-100 dark:border-gray-700 animate-float">
                   <div className="flex items-center space-x-2">
                     <Cloud className="w-5 h-5 text-electric" />
-                    <span className="text-sm font-semibold text-gray-700">AWS Certified</span>
+                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">AWS Certified</span>
                   </div>
                 </div>
                 
-                <div className="absolute bottom-6 -left-6 bg-white rounded-2xl px-4 py-3 shadow-xl border border-gray-100 animate-float" style={{ animationDelay: '1s' }}>
+                <div className="absolute bottom-6 -left-6 bg-white dark:bg-gray-800 rounded-2xl px-4 py-3 shadow-xl border border-gray-100 dark:border-gray-700 animate-float" style={{ animationDelay: '1s' }}>
                   <div className="flex items-center space-x-2">
                     <Code className="w-5 h-5 text-primary" />
-                    <span className="text-sm font-semibold text-gray-700">React Expert</span>
+                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">React Expert</span>
                   </div>
                 </div>
                 
@@ -147,7 +148,7 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <button 
           onClick={() => scrollToSection('about')}
-          className="flex flex-col items-center space-y-2 text-gray-400 hover:text-gray-600 transition-colors group"
+          className="flex flex-col items-center space-y-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-400 transition-colors group"
         >
           <span className="text-sm font-medium">Scroll to explore</span>
           <div className="flex flex-col items-center space-y-1 group-hover:animate-bounce">
