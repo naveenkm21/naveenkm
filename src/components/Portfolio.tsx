@@ -2,79 +2,80 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
-import { ExternalLink, Star, Code, Smartphone, Cloud, Brain, Github } from 'lucide-react';
+import { ExternalLink, Star, Code, Smartphone, Cloud, Brain, Github, Gamepad2 } from 'lucide-react';
 
 const Portfolio = () => {
   const [filter, setFilter] = useState('all');
 
-  // Real pinned repositories from https://github.com/naveenkm21
+  // Your actual pinned GitHub repositories
   const projects = [
     {
       id: 1,
-      title: "Portfolio Website",
-      category: "web",
-      description: "Modern, responsive portfolio website built with React, featuring smooth animations, dark/light mode, and showcasing my professional projects and skills.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-      image: "🌐",
-      link: "https://github.com/naveenkm21/portfolio",
-      githubRepo: "naveenkm21/portfolio",
+      title: "Unscramble App",
+      category: "mobile",
+      description: "An interactive Android word unscrambling game built with Jetpack Compose, featuring engaging UI and challenging gameplay mechanics.",
+      technologies: ["Kotlin", "Jetpack Compose", "Android", "Material Design"],
+      image: "🔤",
+      link: "https://github.com/naveenkm21/UnscrambleApp",
+      githubRepo: "naveenkm21/UnscrambleApp",
       featured: true,
       status: "Featured Project"
     },
     {
       id: 2,
-      title: "Data Structures & Algorithms",
-      category: "programming",
-      description: "Comprehensive collection of data structures and algorithms implementations in multiple programming languages with detailed explanations and examples.",
-      technologies: ["Python", "Java", "C++", "Algorithms"],
-      image: "🧮",
-      link: "https://github.com/naveenkm21/DSA",
-      githubRepo: "naveenkm21/DSA",
-      status: "Academic Project"
+      title: "QuizMaster App",
+      category: "mobile",
+      description: "GDG community quiz application with interactive questions, real-time scoring, and modern Android development practices.",
+      technologies: ["Android", "Kotlin", "Firebase", "Material Design"],
+      image: "🧠",
+      link: "https://github.com/naveenkm21/QuizMaster-GDG",
+      githubRepo: "naveenkm21/QuizMaster-GDG",
+      status: "Community Project"
     },
     {
       id: 3,
-      title: "Machine Learning Projects",
-      category: "ai-ml",
-      description: "Collection of machine learning projects including predictive models, data analysis, and AI implementations for real-world problem solving.",
-      technologies: ["Python", "TensorFlow", "Scikit-learn", "Pandas"],
-      image: "🤖",
-      link: "https://github.com/naveenkm21/ML-Projects",
-      githubRepo: "naveenkm21/ML-Projects",
-      status: "Research Project"
+      title: "SpaceShip Shooter",
+      category: "game",
+      description: "Action-packed space shooter game with engaging graphics, smooth controls, and challenging gameplay mechanics.",
+      technologies: ["Game Development", "Graphics", "Animation", "Physics"],
+      image: "🚀",
+      link: "https://github.com/naveenkm21/SpaceShipShooter",
+      githubRepo: "naveenkm21/SpaceShipShooter",
+      status: "Game Project"
     },
     {
       id: 4,
-      title: "Web Development Bootcamp",
-      category: "web",
-      description: "Full-stack web development projects from bootcamp training, covering frontend frameworks, backend APIs, and database integration.",
-      technologies: ["HTML", "CSS", "JavaScript", "Node.js"],
-      image: "💻",
-      link: "https://github.com/naveenkm21/web-dev-bootcamp",
-      githubRepo: "naveenkm21/web-dev-bootcamp",
-      status: "Learning Project"
+      title: "FitTrackAI",
+      category: "ai-ml",
+      description: "AI-powered fitness tracking application that provides personalized workout recommendations and progress analytics.",
+      technologies: ["AI/ML", "Python", "TensorFlow", "Health Analytics"],
+      image: "💪",
+      link: "https://github.com/naveenkm21/fitness-ai-app",
+      githubRepo: "naveenkm21/fitness-ai-app",
+      featured: true,
+      status: "AI Project"
     },
     {
       id: 5,
-      title: "Cloud Infrastructure",
-      category: "cloud",
-      description: "AWS cloud infrastructure projects demonstrating serverless architecture, containerization, and DevOps best practices.",
-      technologies: ["AWS", "Docker", "Kubernetes", "Terraform"],
-      image: "☁️",
-      link: "https://github.com/naveenkm21/cloud-projects",
-      githubRepo: "naveenkm21/cloud-projects",
-      status: "Professional Work"
+      title: "Color Palette Generator",
+      category: "web",
+      description: "GDG project for generating beautiful color palettes with accessibility features and export options for designers.",
+      technologies: ["Web Development", "Color Theory", "Design Tools", "Accessibility"],
+      image: "🎨",
+      link: "https://github.com/naveenkm21/Color-Palette-Generator-GDG",
+      githubRepo: "naveenkm21/Color-Palette-Generator-GDG",
+      status: "Design Tool"
     },
     {
       id: 6,
-      title: "Android App Development",
-      category: "mobile",
-      description: "Android applications built with modern development practices, including Jetpack Compose and Material Design components.",
-      technologies: ["Kotlin", "Android", "Jetpack Compose", "Firebase"],
-      image: "📱",
-      link: "https://github.com/naveenkm21/android-apps",
-      githubRepo: "naveenkm21/android-apps",
-      status: "Mobile Project"
+      title: "Stock Price Predictor",
+      category: "ai-ml",
+      description: "Machine learning model for predicting stock prices using historical data analysis and advanced algorithms.",
+      technologies: ["Python", "Machine Learning", "Data Analysis", "Financial Modeling"],
+      image: "📈",
+      link: "https://github.com/naveenkm21/StockPricePredictor",
+      githubRepo: "naveenkm21/StockPricePredictor",
+      status: "ML Project"
     }
   ];
 
@@ -83,8 +84,7 @@ const Portfolio = () => {
     { id: 'web', name: 'Web Dev', icon: Code, count: projects.filter(p => p.category === 'web').length },
     { id: 'ai-ml', name: 'AI/ML', icon: Brain, count: projects.filter(p => p.category === 'ai-ml').length },
     { id: 'mobile', name: 'Mobile', icon: Smartphone, count: projects.filter(p => p.category === 'mobile').length },
-    { id: 'cloud', name: 'Cloud', icon: Cloud, count: projects.filter(p => p.category === 'cloud').length },
-    { id: 'programming', name: 'Programming', icon: Code, count: projects.filter(p => p.category === 'programming').length }
+    { id: 'game', name: 'Games', icon: Gamepad2, count: projects.filter(p => p.category === 'game').length }
   ];
 
   const filteredProjects = filter === 'all' 
@@ -112,8 +112,8 @@ const Portfolio = () => {
           </h2>
           <div className="w-32 h-1 bg-gradient-to-r from-primary to-electric mx-auto mb-8"></div>
           <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
-            Explore my latest projects from GitHub showcasing expertise in full-stack development, 
-            cloud solutions, and artificial intelligence applications.
+            Explore my latest projects from GitHub showcasing expertise in mobile development, 
+            AI/ML applications, and interactive game development.
           </p>
         </div>
 
@@ -129,7 +129,7 @@ const Portfolio = () => {
                 className={`group relative ${
                   filter === category.id 
                     ? 'bg-gradient-to-r from-primary to-electric text-white shadow-lg' 
-                    : 'border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary bg-white dark:bg-gray-800'
+                    : 'border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary dark:hover:text-primary bg-white dark:bg-gray-800'
                 } transition-all duration-300 px-6 py-3 rounded-xl font-medium`}
               >
                 <IconComponent className="w-4 h-4 mr-2" />
@@ -167,8 +167,6 @@ const Portfolio = () => {
                   <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold ${
                     project.featured 
                       ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-navy' 
-                      : project.status === 'Live Project'
-                      ? 'bg-gradient-to-r from-green-400 to-green-600 text-white'
                       : 'bg-white/90 dark:bg-gray-800/90 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600'
                   }`}>
                     {project.status}

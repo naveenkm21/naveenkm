@@ -47,29 +47,29 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+    <section id="services" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden transition-colors duration-300">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 -left-20 w-96 h-96 bg-gradient-to-br from-purple-500/5 to-electric/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 -right-20 w-80 h-80 bg-gradient-to-bl from-yellow-400/5 to-orange-400/5 rounded-full blur-2xl"></div>
         
         {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.01)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.01)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-20">
-          <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-600/10 text-purple-600 font-medium text-sm border border-purple-600/20 mb-6">
+          <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-600/10 dark:bg-purple-600/20 text-purple-600 dark:text-purple-400 font-medium text-sm border border-purple-600/20 mb-6">
             <CheckCircle className="w-4 h-4 mr-2" />
             Services
           </span>
-          <h2 className="text-5xl font-bold font-poppins text-navy mb-6">
+          <h2 className="text-5xl font-bold font-poppins text-navy dark:text-white mb-6">
             What I
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-electric"> Offer</span>
           </h2>
           <div className="w-32 h-1 bg-gradient-to-r from-purple-600 to-electric mx-auto mb-8"></div>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+          <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
             Comprehensive development services combining cutting-edge technologies 
             with practical solutions for your business needs.
           </p>
@@ -80,7 +80,7 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 overflow-hidden animate-fade-in"
+              className="group hover:shadow-2xl dark:hover:shadow-2xl dark:hover:shadow-purple-500/20 transition-all duration-500 transform hover:-translate-y-2 border-0 dark:border dark:border-gray-700 overflow-hidden animate-fade-in bg-white dark:bg-gray-800"
               style={{ animationDelay: service.delay }}
             >
               <CardContent className="p-0">
@@ -100,11 +100,11 @@ const Services = () => {
                 </div>
 
                 {/* Service Features */}
-                <div className="p-8 bg-white">
-                  <h4 className="font-bold text-navy mb-6 text-lg">Key Features:</h4>
+                <div className="p-8 bg-white dark:bg-gray-800">
+                  <h4 className="font-bold text-navy dark:text-white mb-6 text-lg">Key Features:</h4>
                   <ul className="space-y-4 mb-8">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-600 group-hover:text-gray-800 transition-colors">
+                      <li key={featureIndex} className="flex items-center text-gray-600 dark:text-gray-300 group-hover:text-gray-800 dark:group-hover:text-gray-100 transition-colors">
                         <div className={`w-3 h-3 bg-gradient-to-r ${service.gradient} rounded-full mr-4 group-hover:scale-110 transition-transform`}></div>
                         <span className="font-medium">{feature}</span>
                       </li>
@@ -113,7 +113,7 @@ const Services = () => {
                   
                   <Button 
                     variant="outline" 
-                    className="w-full border-gray-300 text-gray-600 hover:border-purple-600 hover:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-electric transition-all duration-300 group/button"
+                    className="w-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-purple-600 hover:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-electric transition-all duration-300 group/button"
                     onClick={() => {
                       const element = document.getElementById('contact');
                       if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -129,7 +129,7 @@ const Services = () => {
         </div>
 
         {/* Resume Download Section */}
-        <div className="bg-gradient-to-r from-navy via-purple-800 to-navy rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
+        <div className="bg-gradient-to-r from-navy via-purple-800 to-navy dark:from-gray-800 dark:via-purple-900 dark:to-gray-800 rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-10 left-10 w-20 h-20 border border-white/20 rounded-full"></div>
@@ -141,7 +141,7 @@ const Services = () => {
           <div className="max-w-4xl mx-auto relative z-10">
             <div className="text-6xl mb-6">📄</div>
             <h3 className="text-4xl font-bold font-poppins mb-6">Ready to Work Together?</h3>
-            <p className="text-purple-200 text-xl mb-10 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-purple-200 dark:text-purple-300 text-xl mb-10 leading-relaxed max-w-3xl mx-auto">
               Download my comprehensive resume to learn more about my experience, skills, and achievements. 
               Let's discuss how I can contribute to your next project and bring your ideas to life.
             </p>
