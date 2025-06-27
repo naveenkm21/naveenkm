@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Download, ArrowRight, CheckCircle } from 'lucide-react';
@@ -40,7 +39,7 @@ const Services = () => {
   ];
 
   const downloadResume = () => {
-    window.open('https://drive.google.com/file/d/1jCj2PHswaNvWSaon-q9AaQiKsDweQS72/view?usp=sharing', '_blank');
+    window.open('https://drive.google.com/file/d/1S26gZ5F61xM6o4QdOHXYt6kDCfvQqovl/view?usp=sharing', '_blank');
   };
 
   return (
